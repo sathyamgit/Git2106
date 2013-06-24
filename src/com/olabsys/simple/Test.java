@@ -15,6 +15,7 @@ class Test
 	{
 		int r=fact(5);
 		System.out.println(r);
+		System.out.println(" end of the line");
 	}
 }
 
