@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+ 
+<hibernate-mapping>
+<class name="com.olabsys.hnet.Payment" table="Payment">
+<id name="paymentId" column="pid" />
+
+<discriminator column="dcolumn" />
+<property name="amount" column="amt" />
+ 
+<subclass name="com.olabsys.hnet.CreditCard" discriminator-value="CreditCard">
+<property name="CreditCardType" />
+</subclass>
+ 
+<subclass name="com.olabsys.hnet.Cheque" discriminator-value="Cheque">
+<property name="ChequeType"  />
+</subclass>
+ 
+</class>
+</hibernate-mapping>
